@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Seach from "./review-TA/Seach";
+import ListReview from "./review-TA/listReview";
+import IReview from "./review-TA/type";
+
 
 function App() {
+  const [listReview, setListReview] = useState<IReview[]>([
+    { content: "học tập", date:(new Date()).toLocaleDateString() },
+  ]);
+  const hadleAddReview = (review: string) => {
+    const newData = { content: review, date:(new Date()).toLocaleDateString() };
+
+    setListReview([...listReview, newData]);
+    console.log(2222, review);
+  };
+  const hadleDeleteReview = (index: number) => {
+    setListReview(listReview.filter((item, i) => i!== index));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="body">
+        <Seach />
+        <div className="list-content">
+          <ListReview
+            data={listReview}
+            onAddReview={hadleAddReview}
+            onDeleteReview={hadleDeleteReview}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 

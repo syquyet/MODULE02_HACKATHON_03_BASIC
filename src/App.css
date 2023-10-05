@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
+.footer-content {
+display: flex;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer-content button {
+  margin-left: 100px;
+  background-color: rgba(171, 90, 28, 0.958);
+  border: none;
+  width: 80px;
+ 
+  border-radius: 5px;
 }
+.content {
+  width: 280px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(45, 197, 159, 0.958);
+}
+.content textarea {
+  border: none;
+  background-color: rgba(45, 197, 159, 0.958);
+  outline: none;
+  width: 100%
+}
+.body {
+  width: 70%;
+  margin: 0 auto;
+}
+.body input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgba(99, 206, 179, 0.958);
+}
+.list-content{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
-
-.App-link {
-  color: #61dafb;
+.list-content p{
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reveiw-content{
+  padding-bottom: 130px;
 }
